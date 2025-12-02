@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
 from .models import Aprendiz
+from instructores.models import Instructor
 
 # Create your views here.
 
@@ -11,6 +12,7 @@ def aprendices(request):
     
     context = {
         'lista_aprendices': lista_aprendices,
+        'total_aprendices': lista_aprendices.count(),
     }
     return HttpResponse(template.render(context, request))
 
@@ -24,4 +26,12 @@ def detalle_aprendiz(request, id_aprendiz):
 
 def inicio(request):
   template = loader.get_template('main.html')
-  return HttpResponse(template.render())
+  total_aprendices = Aprendiz.objects.count()
+  total_instructores = Instructor.objects.count()
+    
+  context = {
+  'total_aprendices': total_aprendices,
+  'total_instructores': total_instructores,
+
+  }
+  return HttpResponse(template.render(context, request))
