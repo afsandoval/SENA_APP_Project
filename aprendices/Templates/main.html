@@ -16,6 +16,9 @@
             <a class="btn btn-light btn-lg" href="{% url 'instructores:lista_instructores' %}" role="button">
                 Ver Instructores
             </a>
+            <a class="btn btn-light btn-lg" href="{% url 'programas:lista_programas' %}" role="button">
+                Ver Programas
+            </a>
         </div>
     </div>
 </div>
@@ -31,7 +34,7 @@
             </div>
         </div>
     </div>
-</div>
+
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
@@ -42,4 +45,15 @@
             </div>
         </div>
     </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Lista de Programas</h5>
+                <p class="card-text">Consulta todos los programas registrados en el sistema</p>
+                <p class="card-text">Total de Programas: {{ total_programas}}</p>
+                <a href="{% url 'programas:lista_programas' %}" class="btn btn-success">Ver Lista</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
