@@ -19,6 +19,9 @@
             <a class="btn btn-light btn-lg" href="{% url 'programas:lista_programas' %}" role="button">
                 Ver Programas
             </a>
+            <a class="btn btn-light btn-lg" href="{% url 'cursos:lista_cursos' %}" role="button">
+                Ver Cursos
+            </a>
         </div>
     </div>
 </div>
@@ -55,5 +58,18 @@
             </div>
         </div>
     </div>
+
+        <div class="col-md-4 mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Lista de Cursos</h5>
+                <p class="card-text">Consulta todos los Cursos registrados en el sistema</p>
+                <p class="card-text">Total de Cursos: {{ total_cursos}}</p>
+                <p class="card-text">Cursos Activos: {{ cursos_activos}}</p>
+                <a href="{% url 'cursos:lista_cursos' %}" class="btn btn-success">Ver Lista</a>
+            </div>
+        </div>
+    </div>
+
 </div>
 {% endblock %}
